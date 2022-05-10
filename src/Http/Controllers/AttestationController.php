@@ -20,7 +20,6 @@ class AttestationController extends Controller
     private Array $messages;
 
     public function verifyAttestation(Request $request) {
-        dd(trans('attestation::frontend.the-app-isnt-running-on-an-android-device-powered-by-google-play-services'));
         $header = [];
         foreach($request->header() as $key => $value){
             $header[$key] = trim($value[0]);
