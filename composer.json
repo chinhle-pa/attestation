@@ -1,0 +1,44 @@
+{
+    "name": "chinhle-pa/attestation",
+    "description": "A description for attestation.",
+    "type": "package",
+    "license": "MIT",
+    "keywords": [
+        "laravel"
+    ],
+    "authors": [
+        {
+            "name": "Chinh Le",
+            "email": "chinhle@pacificcross.com.vn"
+        }
+    ],
+    "require": {
+        "illuminate/support": "^7.0|^8.0",
+        "sop/asn1": "^4.1",
+        "spomky-labs/cbor-php": "^2.1",
+        "google/apiclient": "^2.12.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "ChinhlePa\\Attestation\\": "./src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ChinhlePa\\Attestation\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ChinhlePa\\Attestation\\AttestationServiceProvider"
+            ]
+        }
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0"
+    }
+}
