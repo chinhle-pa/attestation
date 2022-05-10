@@ -8,7 +8,40 @@
 `composer require chinhle-pa/attestation`
 
 ## Usage
-Write a few lines about the usage of this package.
+Add middleware ensuredeive to any routes you need check attestation.
+``` bash
+Route::get('/full-info', function(Request $request){
+    return $request;
+})->middleware('ensuredevice');
+```
+Plugin will repond a challenge key
+``` bash
+{
+    "challenge": "bWd2dkJEdjhiS0dQT1ZtVXVqcFA="
+}
+```
+
+### iOS
+Call POST api/via-attestation to check
+
+``` bash
+{
+    "device-platform": "iOS",
+    "challenge": "bWd2dkJEdjhiS0dQT1ZtVXVqcFA=",
+    "integrityToken": "o2NmbXRvYXBwbGUtY....",
+    "keyIndentifier": "sy05jqrd95uyFKZcJrHobs6s.."
+}
+```
+
+### Android
+
+``` bash
+{
+    "device-platform": "Android",
+    "challenge": "bWd2dkJEdjhiS0dQT1ZtVXVqcFA=",
+    "integrityToken": "o2NmbXRvYXBwbGUtY...."
+}
+```
 
 ## Testing
 Run the tests with:
